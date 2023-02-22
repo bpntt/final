@@ -1,4 +1,32 @@
-﻿/* 
+﻿string[] array1 = new string[5] {"hello", "goodbie", "yep", "123", "bmw"};
+string[] array2 = new string[array1.Length];
+StringToArray(array1, array2);
+PrintArray(array1);
+PrintArray(array2);
+void StringToArray(string[] array1, string[] array2)
+{
+    int count = 0;
+    for (int i = 0; i < array1.Length; i++)
+    {
+    if(array1[i].Length <= 3)
+        {
+        array2[count] = array1[i];
+        count++;
+        }
+    }
+}
+void PrintArray(string[] array)
+{
+    Console.Write("[");
+    for (int i = 0; i < array.Length; i++)
+    {
+        array = array.Where(x => x != null).ToArray();
+        Console.Write($"{array[i]}, ");
+    }
+    Console.WriteLine("]");
+}
+
+/* 
 string[] array1 = new string[] {};
 string[] array2 = new string[array1.Length];
 ArrayCreate(array1, array2);
@@ -46,7 +74,6 @@ ArrayCreate(array1, array2);
     Console.WriteLine($"{len}");
     return len;
 } */
-
 /* 
 Console.WriteLine("Введите текст:");
 string[] textMass;
@@ -75,31 +102,3 @@ void FillArray(int size, string text)
     }
     Console.WriteLine();
 } */
-
-string[] array1 = new string[5] {"hello", "goodbie", "yep", "123", "bmw"};
-string[] array2 = new string[array1.Length];
-StringToArray(array1, array2);
-PrintArray(array1);
-PrintArray(array2);
-void StringToArray(string[] array1, string[] array2)
-{
-    int count = 0;
-    for (int i = 0; i < array1.Length; i++)
-    {
-    if(array1[i].Length <= 3)
-        {
-        array2[count] = array1[i];
-        count++;
-        }
-    }
-}
-void PrintArray(string[] array)
-{
-    Console.Write("[");
-    for (int i = 0; i < array.Length; i++)
-    {
-        array = array.Where(x => x != null).ToArray();
-        Console.Write($"{array[i]}, ");
-    }
-    Console.WriteLine("]");
-}
